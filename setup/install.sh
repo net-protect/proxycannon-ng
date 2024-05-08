@@ -21,6 +21,10 @@ rm -rf terraform
 mkdir ~/.aws
 touch ~/.aws/credentials
 
+# create directory for our aws credentials
+mkdir ~/.gcp
+touch ~/.gcp/credentials
+
 ################
 # setup openvpn
 ################
