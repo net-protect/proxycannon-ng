@@ -12,7 +12,7 @@ echo "50	loadb" >> /etc/iproute2/rt_tables
 ip rule add from 10.10.10.0/24 table loadb
 
 # always snat from eth0
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o ens4 -j MASQUERADE
 
 # setup load balanced default gws for second routing table
 # TODO these gw ips need to be dynamic. they are the far end of the 
