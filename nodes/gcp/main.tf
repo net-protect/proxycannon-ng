@@ -26,7 +26,8 @@ resource "google_compute_instance" "exit-node" {
   }
 
   network_interface {
-    network = var.subnet_id
+    network = "proxy-cannon"
+    subnetwork = "proxy-cannon-central"
     access_config {
       // Ephemeral IP
     }
@@ -78,7 +79,7 @@ resource "google_compute_instance" "exit-node" {
 
 resource "google_compute_firewall" "exit-node-sec-group" {
   name    = "exit-node-sec-group"
-  network = var.subnet_id
+  network = "proxy-cannon"
 
   allow {
     protocol = "icmp"
