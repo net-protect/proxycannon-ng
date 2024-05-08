@@ -26,7 +26,7 @@ resource "google_compute_instance" "exit-node" {
   }
 
   network_interface {
-    network = ${var.subnet_id}
+    network = var.subnet_id
     access_config {
       // Ephemeral IP
     }
@@ -61,6 +61,7 @@ resource "google_compute_instance" "exit-node" {
       
     }
   }
+  /*
   # modify our route table when we bring up an exit-node
   provisioner "local-exec" {
     command = "sudo ./add_route.bash ${self.private_ip}"
@@ -71,12 +72,13 @@ resource "google_compute_instance" "exit-node" {
     when = "destroy"
     command = "sudo ./del_route.bash ${self.private_ip}"
   }
+  */
 
 }
 
 resource "google_compute_firewall" "exit-node-sec-group" {
   name    = "exit-node-sec-group"
-  network = ${var.subnet_id}
+  network = var.subnet_id
 
   allow {
     protocol = "icmp"
