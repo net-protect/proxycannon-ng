@@ -2,4 +2,4 @@
 *.tfstate.backup
 *.routecmd
 .terraform
- nodes/gcp/.terraform.lock.hcl
+

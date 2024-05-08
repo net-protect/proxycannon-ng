@@ -11,10 +11,10 @@ apt -y upgrade
 apt -y install unzip git openvpn easy-rsa
 
 # install terraform
-wget https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip
-unzip terraform_0.11.10_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/1.4.4/terraform_1.4.4_linux_amd64.zip
+unzip terraform_1.4.4_linux_amd64.zip
 cp terraform /usr/bin/
-rm -f terraform_0.11.10_linux_amd64.zip
+rm -f terraform_1.4.4_linux_amd64.zip
 rm -rf terraform
 
 # create directory for our aws credentials
