@@ -62,18 +62,18 @@ resource "google_compute_instance" "exit-node" {
       
     }
   }
-  /*
+  
   # modify our route table when we bring up an exit-node
   provisioner "local-exec" {
-    command = "sudo ./add_route.bash ${self.private_ip}"
+    command = "sudo ./add_route.bash ${self.network_interface[0].network_ip}"
   }
 
   # modify our route table when we destroy an exit-node
   provisioner "local-exec" {
-    when = "destroy"
-    command = "sudo ./del_route.bash ${self.private_ip}"
+    when = destroy
+    command = "sudo ./del_route.bash ${self.network_interface[0].network_ip}"
   }
-  */
+  
 
 }
 
