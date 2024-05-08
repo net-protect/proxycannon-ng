@@ -45,7 +45,7 @@ resource "google_compute_instance" "exit-node" {
     connection {
       type     = "ssh"
       user     = "proxycannon"
-      private_key = "${file("${var.gcp_priv_key}")}"
+      private_key = "${file(var.gcp_priv_key)}"
       host        = self.network_interface[0].access_config[0].nat_ip
     }
   }
@@ -57,7 +57,7 @@ resource "google_compute_instance" "exit-node" {
     connection {
       type     = "ssh"
       user     = "proxycannon"
-      private_key = "${file("${var.gcp_priv_key}")}"
+      private_key = "${file(var.gcp_priv_key)}"
       host        = self.network_interface[0].access_config[0].nat_ip
       
     }

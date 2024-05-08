@@ -9,7 +9,7 @@ echo 1 > /proc/sys/net/ipv4/fib_multipath_hash_policy
 echo "50	loadb" >> /etc/iproute2/rt_tables
 
 # set rule for openvpn client source network to use the second routing table
-ip rule add from 10.10.10.0/24 table loadb
+ip rule add from 10.10.11.0/24 table loadb
 
 # always snat from eth0
 iptables -t nat -A POSTROUTING -o ens4 -j MASQUERADE
