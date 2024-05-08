@@ -75,7 +75,7 @@ echo "50        loadb" >> /etc/iproute2/rt_tables
 ip rule add from 10.10.10.0/24 table loadb
 
 # always snat from eth0
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o ens4 -j MASQUERADE
 
 ############################
 # post install instructions
